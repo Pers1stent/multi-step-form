@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  background-color: hsl(217, 100%, 97%);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 90rem;
+  min-height: 50rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  min-width: 60rem;
+  min-height: 37.5rem;
+  background-color: white;
+  border: white 17px solid;
+  border-radius: 10px;
+  gap: 7rem;
+}
+
+.steps_container {
+  transform: translate(32px, -527px);
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: white 1px solid;
+  border-radius: 50%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.number_active {
+  color: black;
+  background-color: hsl(206, 94%, 87%);
+  border: none;
+}
+
+.step_paragraph {
+  color: hsl(231, 11%, 63%);
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+.step_paragraph2 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.left_part {
+  max-height: 35.5rem;
+}
+
+.input_block {
+  display: block;
+  min-width: 28rem;
+  min-height: 3rem;
+  border-radius: 8px;
+  border: hsl(231, 11%, 63%) 0.5px solid;
+  margin-bottom: 1.2rem;
+  padding: 1rem 1rem;
+}
+
+.header {
+  transform: translate(-1px, -46px);
+}
+
+h1 {
+  font-family: "Ubuntu", sans-serif;
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 0.7rem;
+}
+
+h2 {
+  font-size: 1rem;
+  color: hsl(231, 11%, 63%);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+.label {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: hsl(213, 96%, 18%);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 0.9rem;
+}
+
+::placeholder {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  color: hsl(231, 11%, 63%);
+  font-size: 1rem;
+}
+
+.next_step {
+  transform: translate(20.7rem, 4.4rem);
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(229, 24%, 87%);
+  padding: 1rem 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.next_step:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* .hidden {
+  display: none;
+} */
+
+.card {
+  border: hsl(229, 24%, 87%) 1px solid;
+  padding: 1rem;
+  min-width: 8.7rem;
+  border-radius: 8px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.card img {
+  margin-bottom: 3rem;
+}
+
+.card h3 {
+  margin-bottom: 0.2rem;
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.card p:first-of-type {
+  color: hsl(231, 11%, 63%);
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.card:hover {
+  border: hsl(243, 100%, 62%) 1px solid;
+  background-color: hsl(231, 100%, 99%);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.cards {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.rate {
+  display: flex;
+  justify-content: center;
+  gap: 1.7rem;
+  background-color: hsl(231, 100%, 99%);
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.rate_label {
+  min-width: 2.3rem;
+  min-height: 1.2rem;
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+
+.rate_label::before {
+  position: absolute;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  margin: 3px;
+  transition: 0.2s;
+}
+
+.forLabel {
+  display: flex;
+}
+
+.checkbox:checked + .rate_label::before {
+  transform: translate(1.2rem);
+}
+
+.checkbox {
+  display: none;
+}
+
+.active_rate {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+
+.non-active_rate {
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+}
+
+.prev_step {
+  transform: translate(-9.25rem, 4.4rem);
+  background-color: white;
+  color: hsl(231, 11%, 63%);
+  padding: 1rem 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.prev_step:hover {
+  color: hsl(213, 96%, 18%);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.free_months {
+  color: hsl(213, 96%, 18%);
+  font-size: 0.7rem;
+}

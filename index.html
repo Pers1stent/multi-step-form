@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Multi-step form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <!-- Sidebar start -->
+
+    <!-- Step 1 Your info Step 2 Select plan Step 3 Add-ons Step 4 Summary -->
+    <div class="wrapper">
+      <div class="container">
+        <div class="left_part">
+          <img src="./assets/images/bg-sidebar-desktop.svg" alt="" />
+          <div class="steps_container">
+            <div class="step">
+              <div class="number number_active"><p>1</p></div>
+              <div>
+                <p class="step_paragraph">STEP 1</p>
+                <p class="step_paragraph2">YOUR INFO</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="number"><p>2</p></div>
+              <div>
+                <p class="step_paragraph">STEP 2</p>
+                <p class="step_paragraph2">SELECT PLAN</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="number"><p>3</p></div>
+              <div>
+                <p class="step_paragraph">STEP 3</p>
+                <p class="step_paragraph2">ADD-ONS</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="number"><p>4</p></div>
+              <div>
+                <p class="step_paragraph">STEP 4</p>
+                <p class="step_paragraph2">SUMMARY</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="right_part_step1">
+          <div class="header">
+            <h1>Personal info</h1>
+            <h2>Please provide your name, email address, and phone number.</h2>
+          </div>
+          <div class="form">
+            <form>
+              <div>
+                <label class="label" for="user_name">Name</label>
+                <input
+                  class="input_block"
+                  type="text"
+                  id="user_name"
+                  placeholder="e.g. Stephen King "
+                />
+              </div>
+              <div>
+                <label class="label" for="user_email">Email Address</label>
+                <input
+                  class="input_block"
+                  type="email"
+                  id="user_email"
+                  placeholder="e.g. stephenking@lorem.com"
+                />
+              </div>
+              <div>
+                <label class="label" for="user_tel">Phone Number</label>
+                <input
+                  class="input_block"
+                  type="tel"
+                  id="user_tel"
+                  placeholder="e.g. +1 234 567 890"
+                />
+              </div>
+              <button type="submit" class="next_step">Next Step</button>
+            </form>
+          </div>
+        </div> -->
+
+        <!-- <div class="right_part_step2_monthly">
+          <div class="header">
+            <h1>Select your plan</h1>
+            <h2>You have the option of monthly or yearly billing.</h2>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <img src="./assets/images/icon-arcade.svg" alt="arcade" />
+              <h3>Arcade</h3>
+              <p>$9/mo</p>
+            </div>
+            <div class="card">
+              <img src="./assets/images/icon-advanced.svg" alt="arcade" />
+              <h3>Advanced</h3>
+              <p>$12/mo</p>
+            </div>
+            <div class="card">
+              <img src="./assets/images/icon-pro.svg" alt="arcade" />
+              <h3>Pro</h3>
+              <p>$15/mo</p>
+            </div>
+          </div>
+          <div class="rate">
+            <p class="active_rate">Monthly</p>
+            <div class="forLabel">
+              <input class="checkbox" type="checkbox" id="check" />
+              <label for="check" class="rate_label"></label>
+            </div>
+            <p class="non-active_rate">Yearly</p>
+          </div>
+          <button type="submit" class="next_step">Next Step</button>
+          <button type="submit" class="prev_step">Go Back</button>
+        </div> -->
+        <div class="right_part_step2_yearly">
+          <div class="header">
+            <h1>Select your plan</h1>
+            <h2>You have the option of monthly or yearly billing.</h2>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <img src="./assets/images/icon-arcade.svg" alt="arcade" />
+              <h3>Arcade</h3>
+              <p>$90/yr</p>
+              <p class="free_months">2 months free</p>
+            </div>
+            <div class="card">
+              <img src="./assets/images/icon-advanced.svg" alt="arcade" />
+              <h3>Advanced</h3>
+              <p>$120/yr</p>
+              <p class="free_months">2 months free</p>
+            </div>
+            <div class="card">
+              <img src="./assets/images/icon-pro.svg" alt="arcade" />
+              <h3>Pro</h3>
+              <p>$150/yr</p>
+              <p class="free_months">2 months free</p>
+            </div>
+          </div>
+          <div class="rate">
+            <p class="non-active_rate">Monthly</p>
+            <div class="forLabel">
+              <input class="checkbox" type="checkbox" id="check" />
+              <label for="check" class="rate_label"></label>
+            </div>
+            <p class="active_rate">Yearly</p>
+          </div>
+          <button type="submit" class="next_step">Next Step</button>
+          <button type="submit" class="prev_step">Go Back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar end -->
+
+    <!-- Step 1 start -->
+
+    <!-- Personal info Please provide your name, email address, and phone number.
+    Name e.g. Stephen King Email Address e.g. stephenking@lorem.com Phone Number
+    e.g. +1 234 567 890 Next Step -->
+
+    <!-- Step 1 end -->
+
+    <!-- Step 2 start -->
+
+    <!-- Select your plan You have the option of monthly or yearly billing. Arcade
+    $9/mo Advanced $12/mo Pro $15/mo Monthly Yearly Go Back Next Step -->
+
+    <!-- Step 2 end -->
+
+    <!-- Step 3 start -->
+    <!-- 
+    Pick add-ons Add-ons help enhance your gaming experience. Online service
+    Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save
+    +$2/mo Customizable Profile Custom theme on your profile +$2/mo Go Back Next
+    Step -->
+
+    <!-- Step 3 end -->
+
+    <!-- Step 4 start -->
+
+    <!-- Finishing up Double-check everything looks OK before confirming. -->
+
+    <!-- Dynamically add subscription and add-on selections here -->
+
+    <!-- Total (per month/year) Go Back Confirm -->
+
+    <!-- Step 4 end -->
+
+    <!-- Step 5 start -->
+    <!-- 
+    Thank you! Thanks for confirming your subscription! We hope you have fun
+    using our platform. If you ever need support, please feel free to email us
+    at support@loremgaming.com. -->
+
+    <!-- Step 5 end -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Maksym Kostiuk</a>.
+    </div>
+  </body>
+</html>
