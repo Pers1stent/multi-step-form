@@ -12,13 +12,12 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
+    <script defer src="script.js"></script>
     <title>Frontend Mentor | Multi-step form</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -33,28 +32,28 @@
           <img src="./assets/images/bg-sidebar-desktop.svg" alt="" />
           <div class="steps_container">
             <div class="step">
-              <div class="number number_active"><p>1</p></div>
+              <div class="number number1 number_active"><p>1</p></div>
               <div>
                 <p class="step_paragraph">STEP 1</p>
                 <p class="step_paragraph2">YOUR INFO</p>
               </div>
             </div>
             <div class="step">
-              <div class="number"><p>2</p></div>
+              <div class="number number2"><p>2</p></div>
               <div>
                 <p class="step_paragraph">STEP 2</p>
                 <p class="step_paragraph2">SELECT PLAN</p>
               </div>
             </div>
             <div class="step">
-              <div class="number"><p>3</p></div>
+              <div class="number number3"><p>3</p></div>
               <div>
                 <p class="step_paragraph">STEP 3</p>
                 <p class="step_paragraph2">ADD-ONS</p>
               </div>
             </div>
             <div class="step">
-              <div class="number"><p>4</p></div>
+              <div class="number number4"><p>4</p></div>
               <div>
                 <p class="step_paragraph">STEP 4</p>
                 <p class="step_paragraph2">SUMMARY</p>
@@ -62,14 +61,15 @@
             </div>
           </div>
         </div>
-        <!-- <div class="right_part_step1">
+
+        <div class="right_part_step1">
           <div class="header">
             <h1>Personal info</h1>
             <h2>Please provide your name, email address, and phone number.</h2>
           </div>
           <div class="form">
             <form>
-              <div>
+              <div class="name">
                 <label class="label" for="user_name">Name</label>
                 <input
                   class="input_block"
@@ -78,7 +78,8 @@
                   placeholder="e.g. Stephen King "
                 />
               </div>
-              <div>
+              <p class="error_message visibility">This field is required</p>
+              <div class="email">
                 <label class="label" for="user_email">Email Address</label>
                 <input
                   class="input_block"
@@ -86,60 +87,48 @@
                   id="user_email"
                   placeholder="e.g. stephenking@lorem.com"
                 />
+                <p class="error_message visibility">This field is required</p>
               </div>
-              <div>
+              <div class="tel">
                 <label class="label" for="user_tel">Phone Number</label>
                 <input
                   class="input_block"
                   type="tel"
                   id="user_tel"
-                  placeholder="e.g. +1 234 567 890"
+                  placeholder="e.g. +1 234 567 8980"
                 />
+                <p class="error_message visibility">This field is required</p>
               </div>
-              <button type="submit" class="next_step">Next Step</button>
+              <button type="submit" class="next_step step_1 next_step_step1">
+                Next Step
+              </button>
             </form>
           </div>
-        </div> -->
+        </div>
 
-        <!-- <div class="right_part_step2_monthly">
-          <div class="header">
+        <div class="right_part_step2 hidden">
+          <div class="step2_header">
             <h1>Select your plan</h1>
             <h2>You have the option of monthly or yearly billing.</h2>
           </div>
-          <div class="cards">
-            <div class="card">
+          <div class="cards_monthly">
+            <div class="card_monthly">
               <img src="./assets/images/icon-arcade.svg" alt="arcade" />
               <h3>Arcade</h3>
               <p>$9/mo</p>
             </div>
-            <div class="card">
+            <div class="card_monthly">
               <img src="./assets/images/icon-advanced.svg" alt="arcade" />
               <h3>Advanced</h3>
               <p>$12/mo</p>
             </div>
-            <div class="card">
+            <div class="card_monthly">
               <img src="./assets/images/icon-pro.svg" alt="arcade" />
               <h3>Pro</h3>
               <p>$15/mo</p>
             </div>
           </div>
-          <div class="rate">
-            <p class="active_rate">Monthly</p>
-            <div class="forLabel">
-              <input class="checkbox" type="checkbox" id="check" />
-              <label for="check" class="rate_label"></label>
-            </div>
-            <p class="non-active_rate">Yearly</p>
-          </div>
-          <button type="submit" class="next_step">Next Step</button>
-          <button type="submit" class="prev_step">Go Back</button>
-        </div> -->
-        <div class="right_part_step2_yearly">
-          <div class="header">
-            <h1>Select your plan</h1>
-            <h2>You have the option of monthly or yearly billing.</h2>
-          </div>
-          <div class="cards">
+          <div class="cards hidden">
             <div class="card">
               <img src="./assets/images/icon-arcade.svg" alt="arcade" />
               <h3>Arcade</h3>
@@ -160,16 +149,190 @@
             </div>
           </div>
           <div class="rate">
-            <p class="non-active_rate">Monthly</p>
+            <p class="active_rate monthly_rate">Monthly</p>
             <div class="forLabel">
               <input class="checkbox" type="checkbox" id="check" />
               <label for="check" class="rate_label"></label>
             </div>
-            <p class="active_rate">Yearly</p>
+            <p class="non-active_rate yearly_rate">Yearly</p>
+          </div>
+          <button type="submit" class="next_step step_2">Next Step</button>
+          <button type="submit" class="prev_step prev_step_2">Go Back</button>
+        </div>
+
+        <div class="right_part_step3 hidden">
+          <div class="header">
+            <h1>Pick add-ons</h1>
+            <h2>Add-ons help enhance your gaming experience.</h2>
+          </div>
+          <div class="adds-ons">
+            <div class="add-on">
+              <div class="services">
+                <input class="add-ons_check" type="checkbox" />
+                <div class="service">
+                  <h3>Online service</h3>
+                  <p class="add-on_service">Access to multiplayer games</p>
+                </div>
+              </div>
+              <div>
+                <p class="blue">+$1/mo</p>
+              </div>
+            </div>
+            <div class="add-on">
+              <div class="services">
+                <input class="add-ons_check" type="checkbox" />
+                <div class="service">
+                  <h3>Larger storage</h3>
+                  <p class="add-on_service">Extra 1 TB storage</p>
+                </div>
+              </div>
+              <div>
+                <p class="blue">+$2/mo</p>
+              </div>
+            </div>
+            <div class="add-on">
+              <div class="services">
+                <input class="add-ons_check" type="checkbox" />
+                <div class="service">
+                  <h3>Customizable profile</h3>
+                  <p class="add-on_service">Custom theme on your profile</p>
+                </div>
+              </div>
+              <div>
+                <p class="blue">+$2/mo</p>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="next_step step_3">Next Step</button>
+          <button type="submit" class="prev_step prev_step_3">Go Back</button>
+        </div>
+
+        <!-- <div right_part_yearly_add-ons>
+          <div class="header">
+            <h1>Pick add-ons</h1>
+            <h2>Add-ons help enhance your gaming experience.</h2>
+          </div>
+          <div class="adds-ons">
+            <div class="add-on">
+              <div class="services">
+                <input class="add-ons_check" type="checkbox" />
+                <div class="service">
+                  <h3>Online service</h3>
+                  <p class="add-on_service">Access to multiplayer games</p>
+                </div>
+              </div>
+              <div>
+                <p class="price">+$10/yr</p>
+              </div>
+            </div>
+            <div class="add-on">
+              <div class="services">
+                <input class="add-ons_check" type="checkbox" />
+                <div class="service">
+                  <h3>Larger storage</h3>
+                  <p class="add-on_service">Extra 1 TB storage</p>
+                </div>
+              </div>
+              <div>
+                <p class="price">+$20/yr</p>
+              </div>
+            </div>
+            <div class="add-on">
+              <div class="services">
+                <input class="add-ons_check" type="checkbox" />
+                <div class="service">
+                  <h3>Customizable profile</h3>
+                  <p class="add-on_service">Custom theme on your profile</p>
+                </div>
+              </div>
+              <div>
+                <p class="price">+$20/yr</p>
+              </div>
+            </div>
           </div>
           <button type="submit" class="next_step">Next Step</button>
           <button type="submit" class="prev_step">Go Back</button>
-        </div>
+        </div> -->
+
+        <!-- <div class="right_part_monthly_summary">
+          <div class="header">
+            <h1>Finishing up</h1>
+            <h2>Double check everything looks OK before confirming.</h2>
+          </div>
+          <div class="summary">
+            <div class="option_container">
+              <div class="option">
+                <div>
+                  <h3>Arcade (Monthly)</h3>
+                  <p class="underline">Change</p>
+                </div>
+                <p class="align-center">$9/mo</p>
+              </div>
+              <div class="option1">
+                <p>Online service</p>
+                <p>+$1/mo</p>
+              </div>
+              <div class="option2">
+                <p>Larger storage</p>
+                <p>+$2/mo</p>
+              </div>
+            </div>
+            <div class="option_summary">
+              <p>Total (per month)</p>
+              <p>+$12/mo</p>
+            </div>
+          </div>
+          <button type="submit" class="confirm">Confirm</button>
+          <button type="submit" class="prev_step">Go Back</button>
+        </div> -->
+
+        <!-- <div class="right_part_yearly_summary">
+          <div class="header">
+            <h1>Finishing up</h1>
+            <h2>Double check everything looks OK before confirming.</h2>
+          </div>
+          <div class="summary">
+            <div class="option_container">
+              <div class="option">
+                <div>
+                  <h3>Arcade (Yearly)</h3>
+                  <p class="underline">Change</p>
+                </div>
+                <p class="align-center">$90/yr</p>
+              </div>
+              <div class="option1">
+                <p>Online service</p>
+                <p>+$10/yr</p>
+              </div>
+              <div class="option2">
+                <p>Larger storage</p>
+                <p>+$20/yr</p>
+              </div>
+            </div>
+            <div class="option_summary">
+              <p>Total (per year)</p>
+              <p>+$120/yr</p>
+            </div>
+          </div>
+          <button type="submit" class="confirm">Confirm</button>
+          <button type="submit" class="prev_step">Go Back</button>
+        </div> -->
+
+        <!-- <div class="right_part_confirmation">
+          <img
+            src="./assets/images/icon-thank-you.svg"
+            alt="thank you"
+            class="thank_you"
+          />
+          <div class="header header_confirm">
+            <h1>Thank you!</h1>
+            <h2>
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </h2>
+          </div>
+        </div> -->
       </div>
     </div>
 
