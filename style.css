@@ -345,7 +345,9 @@ h2 {
 }
 
 .confirm {
-  transform: translate(20.7rem, 4.4rem);
+  position: absolute;
+  top: 38.63rem;
+  right: 23.8rem;
   background-color: hsl(243, 100%, 62%);
   color: hsl(229, 24%, 87%);
   padding: 1rem 1.5rem;
@@ -354,6 +356,7 @@ h2 {
   font-size: 1rem;
   border-radius: 8px;
   border: 0px;
+  min-width: 7.5rem;
 }
 
 .confirm:hover {
@@ -410,13 +413,25 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.option2 {
+/* .option2 {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
+.option3 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+} */
+
 .underline {
+  background-color: hsl(231, 100%, 99%);
+  color: hsl(231, 11%, 63%);
+  font-family: "Ubuntu", sans-serif;
+  border: none;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .option1 p:last-child {
@@ -424,6 +439,10 @@ h2 {
 }
 
 .option2 p:last-child {
+  color: hsl(213, 96%, 18%);
+}
+
+.option3 p:last-child {
   color: hsl(213, 96%, 18%);
 }
 
@@ -510,4 +529,14 @@ form {
   background-color: hsl(231, 100%, 99%);
   transition: 0.2s;
   cursor: pointer;
+}
+
+.prev_step_4 {
+  position: absolute;
+  top: 34.23rem;
+  right: 37.49rem;
+}
+
+.nice {
+  display: inline;
 }
