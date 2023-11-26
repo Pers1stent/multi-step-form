@@ -5,7 +5,6 @@ const tel = document.getElementById("user_tel");
 const errorMessage = document.querySelectorAll(".error_message");
 const inputForm = document.querySelectorAll(".input_block");
 const checkbox = document.querySelector(".checkbox");
-const change = document.querySelectorAll(".underline");
 
 const card = document.querySelectorAll(".card");
 const card_monthly = document.querySelectorAll(".card_monthly");
@@ -118,20 +117,6 @@ const removeHoverForCards = function (cards) {
   cards.forEach((card) => card.classList.remove("hover"));
 };
 
-const addEventListenerHover = function (cards, monthlyCards) {
-  cards.forEach((oneCard) =>
-    oneCard.addEventListener("click", function () {
-      removeHoverForCards(cards);
-      removeHoverForCards(monthlyCards);
-
-      this.classList.add("hover");
-    })
-  );
-};
-
-addEventListenerHover(card, card_monthly);
-addEventListenerHover(card_monthly, card);
-
 checkbox.addEventListener("change", function () {
   if (this.checked) {
     cardsMonth.classList.add("hidden");
@@ -206,13 +191,6 @@ nextButton3.forEach((next) =>
   })
 );
 
-change.forEach((ch) =>
-  ch.addEventListener("click", function () {
-    monthlyStep4.classList.add("hidden");
-    step2.classList.remove("hidden");
-  })
-);
-
 prevButton3.forEach((prev) =>
   prev.addEventListener("click", function () {
     if (checkbox.checked) {
@@ -239,7 +217,43 @@ confirmButton.forEach((confirm) =>
   })
 );
 
-addOns.forEach((addOn, index) => {
+function updateTotal() {
+  let total = 0;
+  let total1 = 0;
+
+  const optionPrices = document.querySelectorAll(".clicked .price");
+  const optionPrices1 = document.querySelectorAll(".clicked .price1");
+
+  optionPrices.forEach((price) => {
+    total += parseFloat(price.textContent.replace(/[^\d.-]/g, ""));
+  });
+
+  optionPrices1.forEach((price) => {
+    total1 += parseFloat(price.textContent.replace(/[^\d.-]/g, ""));
+  });
+
+  const grandTotal = total + total1;
+
+  const totalElements = document.querySelectorAll(
+    ".option_summary > p:last-child"
+  );
+
+  totalElements.forEach((element) => {
+    // Clear the content of the last <p> element
+    if (element.parentElement.classList.contains("option_summary")) {
+      element.textContent = "";
+    }
+  });
+
+  const rate = checkbox.checked ? "yr" : "mo";
+
+  totalElements.forEach((element) => {
+    // Display the new content with grandTotal and rate
+    element.textContent = `${grandTotal}/${rate}`;
+  });
+}
+
+addOns.forEach((addOn) => {
   addOn.addEventListener("click", function () {
     const optionContainerMonthly = document.querySelector(
       ".option_container_monthly"
@@ -272,34 +286,135 @@ addOns.forEach((addOn, index) => {
       optionContainerYearly.appendChild(newOption1.cloneNode(true));
       optionContainerMonthly.appendChild(newOption.cloneNode(true));
     } else {
-      const optionToRemoveYearly = document.querySelector(
-        `.right_part_step4_yearly .option1`
-      );
-      const optionToRemoveMonthly = document.querySelector(
-        `.right_part_step4_monthly .option1`
-      );
+      const optionsToRemoveYearly =
+        optionContainerYearly.querySelectorAll(" .option1");
+      const optionsToRemoveMonthly =
+        optionContainerMonthly.querySelectorAll(" .option1");
 
-      optionContainerMonthly.removeChild(optionToRemoveMonthly);
-      optionContainerYearly.removeChild(optionToRemoveYearly);
+      optionsToRemoveYearly.forEach((option) => {
+        if (option.textContent.includes(optionText)) {
+          optionContainerYearly.removeChild(option);
+        }
+      });
+
+      optionsToRemoveMonthly.forEach((option) => {
+        if (option.textContent.includes(optionText)) {
+          optionContainerMonthly.removeChild(option);
+        }
+      });
     }
 
     updateTotal();
   });
+});
 
-  function updateTotal() {
-    const optionPrices = document.querySelectorAll(
-      ".option_container > div:not(.option_summary) > p:last-child"
-    );
-    let total = 0;
-    optionPrices.forEach((price) => {
-      total += parseFloat(price.textContent.replace(/[^\d.-]/g, ""));
-    });
+const cardsMonths = document.querySelectorAll(".card_monthly");
+const optionContainerMonthly = document.querySelector(
+  ".option_container_monthly"
+);
 
-    const totalElements = document.querySelectorAll(
-      ".option_summary > p:last-child"
-    );
-    totalElements.forEach((element) => {
-      element.textContent = `$${total}/mo`;
-    });
+cardsMonths.forEach((card) => {
+  card.addEventListener("click", function () {
+    const optionText = this.querySelector("h3").textContent;
+    const optionPriceText = this.querySelector("p").textContent;
+
+    const newOption = document.createElement("div");
+    newOption.classList.add("option");
+    newOption.innerHTML = `
+      <div>
+        <h3>${optionText} (Monthly)</h3>
+        <button class="underline">Change</button>
+      </div>
+      <p class="align-center">${optionPriceText}</p>
+    `;
+
+    clearOptions(optionContainerMonthly);
+    this.classList.toggle("clicked");
+    this.classList.toggle("hover");
+
+    if (this.classList.contains("clicked")) {
+      optionContainerMonthly.insertBefore(
+        newOption.cloneNode(true),
+        optionContainerMonthly.firstChild
+      );
+      const changeButton =
+        optionContainerMonthly.querySelector("button.underline");
+
+      changeButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        monthlyStep4.classList.add("hidden");
+        step2.classList.remove("hidden");
+      });
+    } else {
+      const optionsToRemoveYearly =
+        optionContainerYearly.querySelectorAll(".option");
+      const optionsToRemoveMonthly =
+        optionContainerMonthly.querySelectorAll(".option");
+
+      optionsToRemoveYearly.forEach((option) => {
+        if (option.textContent.includes(optionText)) {
+          optionContainerYearly.removeChild(option);
+        }
+      });
+
+      optionsToRemoveMonthly.forEach((option) => {
+        if (option.textContent.includes(optionText)) {
+          optionContainerMonthly.removeChild(option);
+        }
+      });
+    }
+    updateTotal();
+  });
+});
+
+function clearOptions(container) {
+  const firstOption = container.querySelector(".option");
+  if (firstOption) {
+    container.removeChild(container.firstChild);
   }
+}
+
+const cardsYears = document.querySelectorAll(".card");
+const optionContainerYearly = document.querySelector(
+  ".option_container_yearly"
+);
+
+cardsYears.forEach((card) => {
+  card.addEventListener("click", function () {
+    const optionText = this.querySelector("h3").textContent;
+    const optionPriceText = this.querySelector("p").textContent;
+
+    const newOption = document.createElement("div");
+    newOption.classList.add("option");
+    newOption.innerHTML = `
+        <div>
+          <h3>${optionText} (Yearly)</h3>
+          <button class="underline">Change</button>
+        </div>
+        <p class="align-center">${optionPriceText}</p>
+      `;
+
+    clearOptions(optionContainerYearly);
+    this.classList.toggle("clicked");
+    this.classList.toggle("hover");
+
+    if (this.classList.contains("clicked")) {
+      optionContainerYearly.insertBefore(
+        newOption.cloneNode(true),
+        optionContainerYearly.firstChild
+      );
+      const changeButton =
+        optionContainerYearly.querySelector("button.underline");
+
+      changeButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        yearlyStep4.classList.add("hidden");
+        step2.classList.remove("hidden");
+      });
+    } else {
+      clearOptions(optionContainerYearly);
+    }
+
+    updateTotal();
+  });
 });
