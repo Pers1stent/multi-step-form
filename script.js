@@ -5,6 +5,8 @@ const tel = document.getElementById("user_tel");
 const errorMessage = document.querySelectorAll(".error_message");
 const inputForm = document.querySelectorAll(".input_block");
 const checkbox = document.querySelector(".checkbox");
+const container = document.querySelector(".container");
+const stepsContainer = document.querySelector(".steps_container");
 
 const card = document.querySelectorAll(".card");
 const card_monthly = document.querySelectorAll(".card_monthly");
@@ -100,6 +102,8 @@ nextButton1.addEventListener("click", function (e) {
   } else {
     step1.classList.add("hidden");
     step2.classList.remove("hidden");
+    container.classList.add("extended_container");
+    stepsContainer.classList.add("steps2_container");
     number1.classList.remove("number_active");
     number2.classList.add("number_active");
   }
@@ -108,6 +112,8 @@ nextButton1.addEventListener("click", function (e) {
 prevButton1.addEventListener("click", function () {
   step1.classList.remove("hidden");
   step2.classList.add("hidden");
+  container.classList.remove("extended_container");
+  stepsContainer.classList.remove("steps2_container");
   number1.classList.add("number_active");
   number2.classList.remove("number_active");
   inputForm.forEach((input) => input.classList.remove("red"));
@@ -139,6 +145,8 @@ checkbox.addEventListener("change", function () {
 
 nextButton2.addEventListener("click", function () {
   step2.classList.add("hidden");
+  container.classList.remove("extended_container");
+  stepsContainer.classList.remove("steps2_container");
 
   if (checkbox.checked) {
     yearlyStep3.classList.remove("hidden");
@@ -158,6 +166,8 @@ prevButton2.forEach((prev) =>
       monthlyStep3.classList.add("hidden");
     }
     step2.classList.remove("hidden");
+    container.classList.add("extended_container");
+    stepsContainer.classList.add("steps2_container");
 
     number2.classList.add("number_active");
     number3.classList.remove("number_active");
@@ -249,7 +259,7 @@ function updateTotal() {
 
   totalElements.forEach((element) => {
     // Display the new content with grandTotal and rate
-    element.textContent = `${grandTotal}/${rate}`;
+    element.textContent = `$${grandTotal}/${rate}`;
   });
 }
 
@@ -341,7 +351,10 @@ cardsMonths.forEach((card) => {
         optionContainerMonthly.querySelector("button.underline");
 
       changeButton.addEventListener("click", function (event) {
-        event.stopPropagation();
+        container.classList.add("extended_container");
+        stepsContainer.classList.add("steps2_container");
+        number2.classList.add("number_active");
+        number4.classList.remove("number_active");
         monthlyStep4.classList.add("hidden");
         step2.classList.remove("hidden");
       });
@@ -406,8 +419,12 @@ cardsYears.forEach((card) => {
       const changeButton =
         optionContainerYearly.querySelector("button.underline");
 
-      changeButton.addEventListener("click", function (event) {
-        event.stopPropagation();
+      changeButton.addEventListener("click", function (e) {
+        e.stopPropagation();
+        container.classList.add("extended_container");
+        stepsContainer.classList.add("steps2_container");
+        number2.classList.add("number_active");
+        number4.classList.remove("number_active");
         yearlyStep4.classList.add("hidden");
         step2.classList.remove("hidden");
       });
