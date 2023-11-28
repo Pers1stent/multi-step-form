@@ -549,7 +549,353 @@ form {
   display: inline;
 }
 
-@media only screen and (min-width: 375px) and (max-width: 430px) {
+@media only screen and (min-width: 414px) and (max-width: 430px) {
+  .wrapper {
+    max-width: 430px;
+    min-width: 414px;
+    max-height: 932px;
+    min-height: 495px;
+  }
+
+  .container {
+    max-width: 340px;
+    min-width: 300px;
+    max-height: 400px;
+    min-height: 400px;
+    gap: 0rem;
+    transform: translate(0px, -140px);
+  }
+
+  .extended_container {
+    max-width: 340px;
+    min-width: 300px;
+    max-height: 300px;
+    min-height: 440px;
+    gap: 0rem;
+    transform: translate(0px, -120px);
+  }
+
+  .img1 {
+    display: none;
+  }
+
+  .img2 {
+    display: block;
+    min-width: 414px;
+    max-width: 430px;
+  }
+
+  .number {
+    height: 2rem;
+  }
+
+  .step {
+    width: 3rem;
+    height: 1rem;
+    margin-bottom: 0;
+  }
+
+  .steps_container {
+    display: flex;
+    transform: translate(60px, -240px);
+  }
+
+  .steps2_container {
+    display: flex;
+    transform: translate(60px, -259.5px);
+  }
+
+  .step_paragraph {
+    display: none;
+  }
+  .step_paragraph2 {
+    display: none;
+  }
+
+  .header {
+    max-width: 280px;
+    transform: translate(-189px, 10px);
+  }
+
+  .input_block {
+    min-width: 19rem;
+    min-height: 2rem;
+    max-height: 2.5rem;
+  }
+
+  form {
+    transform: translate(-189px, 30px);
+    max-height: 244px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .attribution {
+    display: none;
+  }
+
+  .error_message {
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
+  }
+  .label {
+    margin-bottom: 0.2rem;
+    font-size: 0.8rem;
+  }
+
+  .white {
+    background-color: white;
+    transform: translate(-57.5px, 115px);
+    min-width: 414px;
+    max-width: 430px;
+    min-height: 100px;
+  }
+
+  .right_part_step2 .white {
+    background-color: white;
+    transform: translate(-246px, 266px);
+    min-width: 414px;
+    max-width: 430px;
+    min-height: 100px;
+  }
+
+  .next_step {
+    transform: translate(230px, 25px);
+  }
+
+  .prev_step_2 {
+    transform: translate(-127px, 27px);
+  }
+
+  .rate {
+    transform: translate(-191px, 12rem);
+    min-width: 5.5rem;
+    max-width: 19rem;
+    max-height: 1rem;
+  }
+
+  .step_2 {
+    transform: translate(228.5px, 26.5px);
+  }
+
+  .step2_header {
+    max-width: 280px;
+    transform: translate(-189px, -84px);
+  }
+
+  .cards_monthly {
+    display: block;
+    top: 7rem;
+    left: 0.7rem;
+  }
+  .card_monthly img {
+    margin-bottom: 0.3rem;
+  }
+
+  .card_monthly {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 8px;
+    border: hsl(229, 24%, 87%) 1px solid;
+    padding: 0.8rem;
+    min-width: 18rem;
+    margin-bottom: 0.6rem;
+    cursor: pointer;
+  }
+
+  .cards {
+    display: block;
+    top: 6rem;
+    left: 0.7rem;
+  }
+  .card img {
+    margin-bottom: 0.3rem;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 8px;
+    border: hsl(229, 24%, 87%) 1px solid;
+    padding: 0.8rem;
+    min-width: 18rem;
+    max-height: 5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  .right_part_step3_monthly .white {
+    transform: translate(-246.5px, 187px);
+    min-width: 414px;
+    max-width: 430px;
+  }
+
+  .prev_step_3 {
+    transform: translate(-123.5px, 27px);
+  }
+
+  .monthly_rate {
+    transform: translate(0px, -10px);
+  }
+  .yearly_rate {
+    transform: translate(0px, -10px);
+  }
+
+  .rate_label {
+    transform: translate(0px, -10px);
+  }
+
+  .card_monthly h3 {
+    font-size: 0.9rem;
+  }
+
+  .card_monthly p:first-of-type {
+    font-size: 0.8rem;
+  }
+
+  .card_monthly img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .card h3 {
+    font-size: 0.9rem;
+  }
+
+  .card p:first-of-type {
+    font-size: 0.8rem;
+  }
+
+  .card img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .free_months {
+    font-size: 0.6rem;
+  }
+
+  .adds-ons {
+    transform: translate(-191px, 70px);
+  }
+
+  .add-on {
+    gap: 1rem;
+    min-width: 10rem;
+    max-width: 19rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .add-ons_check {
+    margin-left: 0rem;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .add-on h3 {
+    font-size: 0.9rem;
+  }
+
+  .add-on_service {
+    font-size: 0.7rem;
+  }
+
+  .price {
+    font-size: 0.8rem;
+  }
+
+  .right_part_step3_monthly .header {
+    transform: translate(-189px, 52px);
+  }
+
+  .right_part_step3_yearly .header {
+    transform: translate(-189px, 52px);
+  }
+
+  .right_part_step3_yearly .white {
+    transform: translate(-246.5px, 187px);
+    max-width: 375px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .hover {
+    border: hsl(243, 100%, 62%) 1px solid;
+    background-color: hsl(231, 100%, 99%);
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .right_part_step4_monthly .white {
+    transform: translate(-246.5px, 306px);
+    min-width: 414px;
+    max-width: 430px;
+  }
+
+  .option_container {
+    max-width: 18rem;
+  }
+
+  .summary {
+    position: absolute;
+    right: 10px;
+    top: 107px;
+  }
+
+  .right_part_step4_monthly .header {
+    transform: translate(-189px, -67px);
+  }
+
+  .right_part_step4_yearly .white {
+    transform: translate(-246.5px, 306px);
+    min-width: 414px;
+    max-width: 430px;
+  }
+
+  .right_part_step4_yearly .header {
+    transform: translate(-189px, -67px);
+  }
+
+  .option {
+    gap: 1rem;
+  }
+
+  .option_summary {
+    transform: translate(-10px, 0px);
+    justify-content: center;
+    gap: 5rem;
+  }
+
+  .confirm {
+    position: relative;
+    top: 25px;
+    right: -230px;
+  }
+
+  .prev_step_4 {
+    position: relative;
+    top: -43.5px;
+    right: -26px;
+  }
+
+  .thank_you {
+    transform: translate(-4.5rem, -1rem);
+  }
+
+  .header_confirm {
+    transform: translate(-158px, 10px);
+    min-width: 15rem;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 413px) {
   .wrapper {
     max-width: 430px;
     min-width: 375px;
