@@ -566,6 +566,22 @@ form {
     transform: translate(0px, -140px);
   }
 
+  .right_part_step1 {
+    transform: translate(-247px, 0px);
+  }
+
+  .right_part_step2 {
+    transform: translate(-247px, 0px);
+  }
+
+  .right_part_step3_yearly {
+    transform: translate(-246px, 0px);
+  }
+
+  .right_part_step3_monthly {
+    transform: translate(-246px, 0px);
+  }
+
   .extended_container {
     max-width: 340px;
     min-width: 300px;
@@ -614,7 +630,7 @@ form {
 
   .header {
     max-width: 280px;
-    transform: translate(-189px, 10px);
+    transform: translate(63px, 10px);
   }
 
   .input_block {
@@ -623,14 +639,35 @@ form {
     max-height: 2.5rem;
   }
 
+  .form {
+    max-width: 304px;
+  }
+
   form {
-    transform: translate(-189px, 30px);
+    transform: translate(56px, 30px);
     max-height: 244px;
+    max-width: 304px;
   }
 
   h1 {
     font-size: 1.5rem;
     margin-bottom: 0.2rem;
+  }
+
+  .label {
+    max-width: 304px;
+  }
+
+  .name {
+    max-width: 304px;
+  }
+
+  .email {
+    max-width: 304px;
+  }
+
+  .tel {
+    max-width: 304px;
   }
 
   .attribution {
@@ -656,7 +693,7 @@ form {
 
   .right_part_step2 .white {
     background-color: white;
-    transform: translate(-246px, 266px);
+    transform: translate(1px, 266px);
     min-width: 414px;
     max-width: 430px;
     min-height: 100px;
@@ -671,7 +708,7 @@ form {
   }
 
   .rate {
-    transform: translate(-191px, 12rem);
+    transform: translate(57px, 12rem);
     min-width: 5.5rem;
     max-width: 19rem;
     max-height: 1rem;
@@ -683,13 +720,13 @@ form {
 
   .step2_header {
     max-width: 280px;
-    transform: translate(-189px, -84px);
+    transform: translate(60px, -84px);
   }
 
   .cards_monthly {
     display: block;
-    top: 7rem;
-    left: 0.7rem;
+    top: 1rem;
+    left: 4rem;
   }
   .card_monthly img {
     margin-bottom: 0.3rem;
@@ -709,8 +746,8 @@ form {
 
   .cards {
     display: block;
-    top: 6rem;
-    left: 0.7rem;
+    top: 0rem;
+    left: 4rem;
   }
   .card img {
     margin-bottom: 0.3rem;
@@ -730,7 +767,7 @@ form {
   }
 
   .right_part_step3_monthly .white {
-    transform: translate(-246.5px, 187px);
+    transform: translate(-0.5px, 187px);
     min-width: 414px;
     max-width: 430px;
   }
@@ -781,7 +818,8 @@ form {
   }
 
   .adds-ons {
-    transform: translate(-191px, 70px);
+    transform: translate(55px, 70px);
+    width: 300px;
   }
 
   .add-on {
@@ -810,16 +848,24 @@ form {
   }
 
   .right_part_step3_monthly .header {
-    transform: translate(-189px, 52px);
+    transform: translate(64px, 52px);
   }
 
   .right_part_step3_yearly .header {
-    transform: translate(-189px, 52px);
+    transform: translate(64px, 52px);
   }
 
   .right_part_step3_yearly .white {
-    transform: translate(-246.5px, 187px);
+    transform: translate(-0.5px, 187px);
     max-width: 375px;
+  }
+
+  .right_part_step4_monthly {
+    transform: translate(-330px, -76px);
+  }
+
+  .right_part_step4_yearly {
+    transform: translate(-289px, -76px);
   }
 
   .hidden {
@@ -834,7 +880,7 @@ form {
   }
 
   .right_part_step4_monthly .white {
-    transform: translate(-246.5px, 306px);
+    transform: translate(84.5px, 379px);
     min-width: 414px;
     max-width: 430px;
   }
@@ -845,22 +891,32 @@ form {
 
   .summary {
     position: absolute;
-    right: 10px;
-    top: 107px;
+    right: -26px;
+    top: 67px;
   }
 
   .right_part_step4_monthly .header {
-    transform: translate(-189px, -67px);
+    transform: translate(147px, -16px);
   }
 
   .right_part_step4_yearly .white {
-    transform: translate(-246.5px, 306px);
+    transform: translate(44.5px, 378px);
     min-width: 414px;
     max-width: 430px;
   }
 
+  .right_part_step4_yearly .summary {
+    position: absolute;
+    right: 16px;
+    top: 67px;
+  }
+
   .right_part_step4_yearly .header {
-    transform: translate(-189px, -67px);
+    transform: translate(103px, -15px);
+  }
+
+  .right_part_confirmation {
+    transform: translate(-190px, 0px);
   }
 
   .option {
@@ -886,11 +942,11 @@ form {
   }
 
   .thank_you {
-    transform: translate(-4.5rem, -1rem);
+    transform: translate(6.5rem, -1rem);
   }
 
   .header_confirm {
-    transform: translate(-158px, 10px);
+    transform: translate(28px, 10px);
     min-width: 15rem;
   }
 }
@@ -979,6 +1035,18 @@ form {
     margin-bottom: 0.2rem;
   }
 
+  .name {
+    max-width: 304px;
+  }
+
+  .email {
+    max-width: 304px;
+  }
+
+  .tel {
+    max-width: 304px;
+  }
+
   .attribution {
     display: none;
   }
@@ -990,6 +1058,7 @@ form {
   .label {
     margin-bottom: 0.2rem;
     font-size: 0.8rem;
+    max-width: 304px;
   }
 
   .white {
