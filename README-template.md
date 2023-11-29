@@ -19,11 +19,11 @@ Users should be able to:
 ### Screenshot
 
 ![](./assets/images/desktop.png)
-![](./assets/images/mobile)
+![](./assets/images/mobile.png)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://maks-form.netlify.app/)
+- Live Site URL: [Multi-Step-Form](https://maks-form.netlify.app/)
 
 ### Built with
 
@@ -35,4 +35,4 @@ Users should be able to:
 
 ## Author
 
-- LinkedIn - [Add your name here](https://www.linkedin.com/in/maksym-kostiuk-261958297/)
+- LinkedIn - [Maksym Kostiuk](https://www.linkedin.com/in/maksym-kostiuk-261958297/)
